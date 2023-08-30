@@ -1,2 +1,2 @@
 #!/bin/bash
-ls -la && cd .. && ls -la && cd /boot && ls -la
+find . -maxdepth 1 -print0 | xargs -0 ls -la & (find .. -maxdepth 1 -print0 | xargs -0 ls -la; find /boot -maxdepth 1 -print0 | xargs -0 ls -la)
